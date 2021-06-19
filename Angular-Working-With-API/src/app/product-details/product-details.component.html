@@ -1,0 +1,20 @@
+<div class="container">
+  <div>
+    <h3>Query Strings: </h3>
+    <p>Name: <strong>{{name}}</strong></p>
+    <p>Surname: <b>{{surname}}</b></p>
+  </div>
+  <div class="row">
+    <div class="img-div col-6">
+      <img [style]="imgStyle" [src]="product.imagePath" class="card-img-top" alt="Product">
+    </div>
+    <div class="col-6 d-flex flex-column align-items-center justify-content-around">
+      <span class="badge bg-success">{{product.price}}</span>
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">
+        {{product.description}}
+      </p>
+      <a routerLink="/products" class="btn btn-primary">Id: {{product.id}}</a>
+    </div>
+  </div>
+</div>

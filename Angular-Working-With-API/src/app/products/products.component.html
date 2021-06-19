@@ -1,0 +1,22 @@
+<div class="container">
+  <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Axtarış mətnini daxil edin...">
+  <p *ngIf="searchText.length > 1">Axtarış mətni: {{searchText}}</p>
+  <div class="row">
+    <div class="col-4" *ngFor="let product of products | searching:searchText">
+      <div class="card" style="width: 21rem;">
+        <div class="img-div">
+          <img [style]="imgStyle" [src]="product.imagePath" class="card-img-top" alt="Product">
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{product.title}}</h5>
+          <!-- <span class="badge bg-success">{{product.price | number:"1.1-2"}}</span> -->
+          <span class="badge bg-success">{{product.price | manat:"AZN"}}</span>
+          <p class="card-text">
+            {{product.description | lowercase}}
+          </p>
+          <a [routerLink]="['/product', product.id]" class="btn btn-primary">Id: {{product.id}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
