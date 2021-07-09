@@ -9,3 +9,17 @@
     </main>
   </div>
 </div>
+
+<div class="shadow-layout active" *ngIf="loginService.IsLoggedIn()==false">
+  <div class="login-root">
+    <div class="form-group">
+      <label for="input-username-login">Username: </label>
+      <input id="input-username-login" [(ngModel)]="user.username" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="input-password-login">Password: </label>
+      <input id="input-password-login" [(ngModel)]="user.password" type="password" class="form-control">
+    </div>
+    <button (click)="SignIn()" type="button" class="btn btn-primary mt-3 p-2">Daxil ol</button>
+  </div>
+</div>

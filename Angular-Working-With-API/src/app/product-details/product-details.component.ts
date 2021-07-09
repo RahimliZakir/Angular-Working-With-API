@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/models/product';
+import { AlertifyService } from 'src/services/alertify.service';
 import { ProductsService } from 'src/services/products.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { ProductsService } from 'src/services/products.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService) {
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService,
+    private router: Router, private alertify: AlertifyService) {
   }
 
   imgStyle: any = {

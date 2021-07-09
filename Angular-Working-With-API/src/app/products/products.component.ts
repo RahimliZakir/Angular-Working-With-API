@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/models/product';
+import { CategoryService } from 'src/services/category.service';
 import { ProductsService } from 'src/services/products.service';
 
 
@@ -10,7 +11,8 @@ import { ProductsService } from 'src/services/products.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService: ProductsService) { }
+  constructor(private productService: ProductsService,
+    private categoryService: CategoryService) { }
 
   searchText: string = '';
 
@@ -24,6 +26,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.productService.GetProducts();
+
+    // this.categoryService.GetCategories().subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
 }

@@ -3,3 +3,28 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.shadow-layout {
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 999;
+
+    .login-root {
+        background-color: white;
+        padding: 50px 20px;
+        border: 2px solid black;
+        border-radius: 4px;
+        z-index: 1000;
+    }
+}
+
+.active {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

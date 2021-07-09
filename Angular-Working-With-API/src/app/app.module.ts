@@ -10,12 +10,20 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ManatPipe } from 'src/pipes/manat.pipe';
 import { SearchingPipe } from 'src/pipes/searching.pipe';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategorysearchingPipe } from 'src/pipes/categorysearching.pipe';
+import { CategoryDetailsComponent } from './category-details/category-details.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { LoginGuard } from 'src/guards/login.guard';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -24,9 +32,16 @@ import { FormsModule } from '@angular/forms';
     ProductsComponent,
     ProductDetailsComponent,
     ManatPipe,
-    SearchingPipe
+    SearchingPipe,
+    CategoriesComponent,
+    CategorysearchingPipe,
+    CategoryDetailsComponent,
+    AddCategoryComponent,
+    EditCategoryComponent
   ],
-  providers: [],
+  providers: [
+    LoginGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

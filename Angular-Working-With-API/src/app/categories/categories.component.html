@@ -1,0 +1,27 @@
+<div class="container">
+  <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Axtarış mətnini daxil edin...">
+  <p *ngIf="searchText.length > 1">Axtarış mətni: {{searchText}}</p>
+  <div class="row">
+    <div id="category-add-div">
+      <a id="category-add-btn" class="btn btn-success" [style]="addBtnStyle" [routerLink]="['/categories/add']">
+        <i class="fa fa-plus"></i>
+      </a>
+    </div>
+    <div class="col-4" *ngFor="let category of categories">
+      <div class="card" style="width: 21rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{category.name}}</h5>
+          <!-- <span class="badge bg-success">{{product.price | number:"1.1-2"}}</span> -->
+          <div class="mb-3">
+            <a class="btn btn-warning">Id: {{category.id}}</a>
+          </div>
+          <a [routerLink]="['/category', category.id]" class="btn btn-primary">Ətraflı</a>
+          <a class="btn btn-warning" [style.marginLeft]="ml" [routerLink]="['/category/edit', category.id]">Redaktə et</a>
+          <a class="btn btn-danger" [style.marginLeft]="ml" (click)="RemoveCategory(category)">
+            Sil
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
